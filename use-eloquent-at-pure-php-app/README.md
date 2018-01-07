@@ -14,6 +14,31 @@ create an "books" table in /app.db ... done
 prepare data at "books" table in /app.db ... done
 ```
 
+`src`ディレクトリに入り、`composer.phar`を入手します。
+
+```
+$ cd ./src
+$ curl -sS https://getcomposer.org/installer | php
+All settings correct for using Composer
+Downloading...
+
+Composer (version 1.6.2) successfully installed to: /Users/matsumura/dev/src/github.com/zuckeyM-17/php-sandbox/use-eloquent-at-pure-php-app/src/composer.phar
+Use it: php composer.phar
+```
+
+`Eloquent (illuminate/database)`をダウンロードします。
+
+```
+$ ./composer.phar require illuminate/database
+
+Using version ^5.5 for illuminate/database
+./composer.json has been updated
+Loading composer repositories with package information
+~~~~~~~~~~~~~~~~~~~
+Writing lock file
+Generating autoload files
+```
+
 データを取り出します。
 
 ```
