@@ -1,5 +1,9 @@
 # 動作確認
 
+Eloquent導入版はブランチが異なります。
+以下にアクセスして確認してください。
+https://github.com/zuckeyM-17/php-sandbox/tree/use-eloquent-at-pure-php-app/use-eloquent/use-eloquent-at-pure-php-app
+
 - PHP 7.2
 - SQLite3 3.13.x
 
