@@ -15,3 +15,9 @@ class Book extends Model {
         parent::boot();
 
         static::addGlobalScope(new BookScope);
+    }
+
+    public function scopeRecent($query)
+    {
+        return $query->where('id', '>', 3);
+    }

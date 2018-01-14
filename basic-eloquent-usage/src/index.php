@@ -20,3 +20,12 @@ $books = Book::withoutGlobalScope(BookScope::class)->get();
 foreach($books as $book) {
     echo $book->isbn, "\t" , $book->name, "\t", $book->author, "\t", $book->created_at, "\t", $book->updated_at, PHP_EOL;
 }
+
+echo PHP_EOL;
+echo "Query With Local Scope" , PHP_EOL;
+$books = Book::recent()->get();
+
+foreach($books as $book) {
+    echo $book->isbn, "\t" , $book->name, "\t", $book->author, "\t", $book->created_at, "\t", $book->updated_at, PHP_EOL;
+}
+
