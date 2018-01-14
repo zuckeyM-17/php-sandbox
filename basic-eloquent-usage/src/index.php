@@ -4,7 +4,9 @@ define('SRC_DIR', dirname(__FILE__));
 require_once(SRC_DIR . '/vendor/autoload.php');
 require_once(SRC_DIR . '/database.php');
 require_once(SRC_DIR. '/Book.php');
+require_once(SRC_DIR. '/BookScope.php');
 
+echo "Query With Global Scope" , PHP_EOL;
 $books = Book::all();
 
 foreach($books as $book) {
