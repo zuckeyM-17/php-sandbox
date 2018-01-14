@@ -21,3 +21,9 @@ class Book extends Model {
     {
         return $query->where('id', '>', 3);
     }
+
+    public function scopeOfId($query, $id)
+    {
+        return $query->where('id', $id);
+    }
+}

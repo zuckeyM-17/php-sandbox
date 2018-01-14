@@ -29,3 +29,10 @@ foreach($books as $book) {
     echo $book->isbn, "\t" , $book->name, "\t", $book->author, "\t", $book->created_at, "\t", $book->updated_at, PHP_EOL;
 }
 
+echo PHP_EOL;
+echo "Query With Dynamic Scope" , PHP_EOL;
+$books = Book::ofId(3)->get();
+
+foreach($books as $book) {
+    echo $book->isbn, "\t" , $book->name, "\t", $book->author, "\t", $book->created_at, "\t", $book->updated_at, PHP_EOL;
+}
