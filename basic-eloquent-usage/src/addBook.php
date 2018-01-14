@@ -6,10 +6,12 @@ require_once(SRC_DIR . '/database.php');
 require_once(SRC_DIR. '/Book.php');
 
 $newBook = new Book();
-$newBook->id = 6;
-$newBook->isbn = '978-4-04-713811-7';
-$newBook->name = '涼宮ハルヒの憂鬱';
-$newBook->author = 'ツガノ ガク';
+$newBook->fill([
+    'id' => 111,
+    'isbn' => '978-4-04-713811-723',
+    'name' => '涼宮ハルヒの憂鬱',
+    'author' => 'ツガノ ガク',
+]);
 $newBook->save();
 
 $books = Book::all();
