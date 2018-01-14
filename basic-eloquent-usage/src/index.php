@@ -8,5 +8,5 @@ require_once(SRC_DIR. '/Book.php');
 $books = Book::all();
 
 foreach($books as $book) {
-    echo $book->isbn, "\t" , $book->name, "\t", $book->author, "\t", $book->created, "\t", $book->updated, PHP_EOL;
+    echo $book->isbn, "\t" , $book->name, "\t", $book->author, "\t", $book->created_at, "\t", $book->updated_at, PHP_EOL;
 }
