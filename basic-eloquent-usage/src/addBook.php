@@ -10,7 +10,7 @@ $newBook->fill([
     'id' => 111,
     'isbn' => '978-4-04-713811-7',
     'name' => '涼宮ハルヒの憂鬱',
-    'author' => 'ツガノ ガク',
+    'author' => '谷川 流',
 ]);
 $newBook->save();
 
