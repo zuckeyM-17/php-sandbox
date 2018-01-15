@@ -8,7 +8,7 @@ require_once(SRC_DIR. '/Book.php');
 $newBook = new Book();
 $newBook->fill([
     'id' => 111,
-    'isbn' => '978-4-04-713811-7',
+    'isbn' => '978-4-04-429201-0',
     'name' => '涼宮ハルヒの憂鬱',
     'author' => '谷川 流',
 ]);
