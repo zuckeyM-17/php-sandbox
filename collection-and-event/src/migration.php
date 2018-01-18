@@ -23,7 +23,9 @@ if (!file_exists(SRC_DIR.'/app.db')) {
             $now = date('Y-m-d H:i:s');
             $db->query('INSERT INTO books (`isbn`, `name`, `author`, `deleted_at`, `created_at`, `updated_at`) VALUES '.PHP_EOL.
                 '("978-4-04-867760-8", "SAO 1 ｱｲﾝｸﾗｯﾄﾞ", "川原　礫", NULL, "'.$now. '", "' .$now . '"),'.PHP_EOL.
+                '("978-4-04-867517-8", "アクセルワールド1", "川原　礫", NULL, "'.$now. '", "' .$now . '"),'.PHP_EOL.
                 '("978-4-8402-3353-8", "とらドラ！", "竹宮　ゆゆこ", NULL, "'.$now. '", "' .$now . '"),'.PHP_EOL.
+                '("978-4-04-886494-7", "ゴールデンタイム1", "竹宮　ゆゆこ", NULL, "'.$now. '", "' .$now . '"),'.PHP_EOL.
                 '("978-4-8401-1647-3", "ゼロの使い魔　1", "望月　奈々", NULL, "'.$now. '", "' .$now . '");');
             echo 'done',PHP_EOL; flush();
             $db->commit();
