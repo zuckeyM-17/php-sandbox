@@ -5,7 +5,7 @@ require_once(SRC_DIR . '/vendor/autoload.php');
 require_once(SRC_DIR . '/database.php');
 require_once(SRC_DIR. '/Book.php');
 
-Book::where('isbn', '=', '978-4-04-713811-7')->delete();
+Book::where('isbn', '=', '978-4-04-429201-0')->delete();
 
 $books = Book::all();
 foreach($books as $book) {
