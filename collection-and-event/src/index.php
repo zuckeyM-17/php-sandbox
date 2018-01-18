@@ -9,5 +9,5 @@ echo "Get All Books" , PHP_EOL;
 $books = Book::all();
 
 foreach($books as $book) {
-    echo $book->isbn, "\t" , $book->name, "\t", $book->author, "\t", $book->created_at, "\t", $book->updated_at, PHP_EOL;
+    echo $book->id, "\t", $book->isbn, "\t" , $book->name, "\t", $book->author, "\t", $book->created_at, "\t", $book->updated_at, PHP_EOL;
 }
