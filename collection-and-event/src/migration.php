@@ -14,16 +14,17 @@ if (!file_exists(SRC_DIR.'/app.db')) {
                 '    `isbn`       TEXT UNIQUE NOT NULL,'.PHP_EOL.
                 '    `name`       TEXT NOT NULL,'.PHP_EOL.
                 '    `author`     TEXT NOT NULL,'.PHP_EOL.
-                '    `created_at`    TEXT,'.PHP_EOL.
+                '    `deleted_at`    TEXT,' .PHP_EOL.
+                '    `created_at`    TEXT DEFAULT NULL,'.PHP_EOL.
                 '    `updated_at`    TEXT'.PHP_EOL.');');
             echo 'done',PHP_EOL; flush();
 
             echo 'prepare data at "books" table in /app.db ... '; flush();
             $now = date('Y-m-d H:i:s');
-            $db->query('INSERT INTO books (`isbn`, `name`, `author`, `created_at`, `updated_at`) VALUES '.PHP_EOL.
-                '("978-4-04-867760-8", "SAO 1 ｱｲﾝｸﾗｯﾄﾞ", "川原　礫", "'.$now. '", "' .$now . '"),'.PHP_EOL.
-                '("978-4-8402-3353-8", "とらドラ！", "竹宮　ゆゆこ", "'.$now. '", "' .$now . '"),'.PHP_EOL.
-                '("978-4-8401-1647-3", "ゼロの使い魔　1", "望月　奈々", "'.$now. '", "' .$now . '");');
+            $db->query('INSERT INTO books (`isbn`, `name`, `author`, `deleted_at`, `created_at`, `updated_at`) VALUES '.PHP_EOL.
+                '("978-4-04-867760-8", "SAO 1 ｱｲﾝｸﾗｯﾄﾞ", "川原　礫", NULL, "'.$now. '", "' .$now . '"),'.PHP_EOL.
+                '("978-4-8402-3353-8", "とらドラ！", "竹宮　ゆゆこ", NULL, "'.$now. '", "' .$now . '"),'.PHP_EOL.
+                '("978-4-8401-1647-3", "ゼロの使い魔　1", "望月　奈々", NULL, "'.$now. '", "' .$now . '");');
             echo 'done',PHP_EOL; flush();
             $db->commit();
         }
