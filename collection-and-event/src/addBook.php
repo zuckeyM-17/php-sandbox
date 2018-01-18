@@ -7,12 +7,13 @@ require_once(SRC_DIR. '/Book.php');
 
 $newBook = new Book();
 $newBook->fill([
-    'id' => 111,
     'isbn' => '978-4-04-429201-0',
     'name' => '涼宮ハルヒの憂鬱',
     'author' => '谷川 流',
 ]);
 $newBook->save();
+
+echo 'A Book Added' . PHP_EOL;
 
 $books = Book::all();
 foreach($books as $book) {
