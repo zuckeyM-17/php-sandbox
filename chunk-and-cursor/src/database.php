@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Database\Capsule\Manager as Capsule;
-use Illuminate\Database\Connection as DB;
 
 $capsule = new Capsule;
 $capsule->addConnection([
