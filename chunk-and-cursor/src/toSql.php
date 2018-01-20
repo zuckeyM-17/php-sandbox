@@ -11,7 +11,7 @@ $query = Book::query()
 
 $sql = $query->toSql();
 
-echo 'Query => ' . $sql . PHP_EOL;
+echo 'Query: ' . $sql . PHP_EOL;
 
 foreach($query->get() as $book) {
     echo $book->id, "\t", $book->isbn, "\t" , $book->name, "\t", $book->author, "\t", $book->created_at, "\t", $book->updated_at, PHP_EOL;
