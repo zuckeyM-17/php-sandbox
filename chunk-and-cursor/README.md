@@ -1,7 +1,7 @@
 # EloquentのCollection、Event
 
 こちら↓のブログの確認用の実装です。
-[TBD]
+[Eloquent ORMのChunkとCursorについて調べた](http://blog.zuckey17.org/entry/2018/01/21/093115)
 
 ## 動作確認
 
@@ -62,3 +62,29 @@ A Book Added
 978-4-8401-1647-3       ゼロの使い魔　1 望月　奈々      2018-01-18 18:42:14     2018-01-18 18:42:14
 978-4-04-429201-0       涼宮ハルヒの憂鬱        谷川 流 2018-01-18 18:58:49     2018-01-18 18:58:49
 ```
+
+chunkメソッドのSQLを確認する
+```
+$ php chunk.php
+SAO 1 ｱｲﾝｸﾗｯﾄﾞ
+アクセルワールド1
+とらドラ！
+ゴールデンタイム1
+ゼロの使い魔　1
+Query1: select * from "books" where "books"."deleted_at" is null order by "books"."id" asc limit 2 offset 0
+Query2: select * from "books" where "books"."deleted_at" is null order by "books"."id" asc limit 2 offset 2
+Query3: select * from "books" where "books"."deleted_at" is null order by "books"."id" asc limit 2 offset 4
+
+```
+
+cursorメソッドのSQLを確認する
+```
+$ php cursor.php
+SAO 1 ｱｲﾝｸﾗｯﾄﾞ
+アクセルワールド1
+とらドラ！
+ゴールデンタイム1
+ゼロの使い魔　1
+Query1: select * from "books" where "books"."deleted_at" is null
+```
+
