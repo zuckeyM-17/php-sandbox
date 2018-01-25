@@ -25,9 +25,19 @@ if (!file_exists(SRC_DIR.'/app.db')) {
 
             $file = fopen("./hotel_ichiran201712.csv", "r");
             while($line = fgetcsv($file)){
-            var_dump($line);
+                $stmt = $db->prepare('INSERT INTO inns (`key`, `name`, `address`, `tel`, `url`, `longitude`, `latitude`, `position_info_code`) VALUES ' . PHP_EOL .
+                '("' . $line[0] . '", "' . $line[1] . '", "' . $line[2] . '", "' . $line[3] . '", "' . $line[4] . '", "' . $line[5] . '", "' . $line[6] . '", "' . $line[7] . '");');
+                $stmt->execute();
             }
-            fclose($f);
+            fclose($file);
+
+            $file = fopen("./ryokan_ichiran201712.csv", "r");
+            while($line = fgetcsv($file)){
+                $stmt = $db->prepare('INSERT INTO inns (`key`, `name`, `address`, `tel`, `url`, `longitude`, `latitude`, `position_info_code`) VALUES ' . PHP_EOL .
+                '("' . $line[0] . '", "' . $line[1] . '", "' . $line[2] . '", "' . $line[3] . '", "' . $line[4] . '", "' . $line[5] . '", "' . $line[6] . '", "' . $line[7] . '");');
+                $stmt->execute();
+            }
+            fclose($file);
 
             $db->commit();
         }
