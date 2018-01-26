@@ -43,9 +43,47 @@ Writing lock file
 Generating autoload files
 ```
 
-# 利用したデータ・セット
+## 実行
 
-## 歩行者移動支援サービスに関するデータサイト
+```
+$ php check.php all
+CHECK MEMORY USAGE
+==================
+縄文の宿まんてんル華耀亭や亭ザ・サンプラザート
+==================
+time: 1.418852 memory: 172.007812 MB
+```
+
+```
+$ php check.php chunk100
+CHECK MEMORY USAGE
+==================
+縄文の宿まんてんル華耀亭や亭ザ・サンプラザート
+==================
+time: 7.669265 memory: 4.000000 MB%
+```
+
+```
+$ php check.php chunk1000
+CHECK MEMORY USAGE
+==================
+縄文の宿まんてんル華耀亭や亭ザ・サンプラザート
+==================
+time: 1.841864 memory: 6.000000 MB
+```
+
+```
+$ php check.php cursor
+CHECK MEMORY USAGE
+==================
+縄文の宿まんてんル華耀亭や亭ザ・サンプラザート
+==================
+time: 1.543955 memory: 4.000000 MB
+```
+
+## 利用したデータ・セット
+
+### 歩行者移動支援サービスに関するデータサイト
 
 - 国際観光ホテル整備法に基づいて登録されたホテル・旅館
     - https://www.hokoukukan.go.jp/metadata/resource/81
