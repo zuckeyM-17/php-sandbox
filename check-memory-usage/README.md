@@ -1,4 +1,4 @@
-# EloquentのCollection、Event
+# Eloquent ORMのChunkとCursorにおけるメモリ使用量について
 
 こちら↓のブログの確認用の実装です。
 [Eloquent ORMのChunkとCursorについて調べた](http://blog.zuckey17.org/entry/2018/01/21/093115)
