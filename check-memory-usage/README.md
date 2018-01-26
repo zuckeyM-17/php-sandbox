@@ -1,6 +1,6 @@
 # Eloquent ORMのChunkとCursorにおけるメモリ使用量について
 
-こちら↓のブログの確認用の実装です。
+こちら↓のブログの確認用の実装です。  
 [Eloquent ORMのChunkとCursorについて調べた](http://blog.zuckey17.org/entry/2018/01/21/093115)
 
 ## 動作確認
@@ -52,6 +52,7 @@ CHECK MEMORY USAGE
 縄文の宿まんてんル華耀亭や亭ザ・サンプラザート
 ==================
 time: 1.418852 memory: 172.007812 MB
+Query1: select * from "inns"
 ```
 
 ```
@@ -60,7 +61,12 @@ CHECK MEMORY USAGE
 ==================
 縄文の宿まんてんル華耀亭や亭ザ・サンプラザート
 ==================
-time: 7.669265 memory: 4.000000 MB%
+time: 9.412318 memory: 4.000000 MB
+Query1: select * from "inns" order by "inns"."id" asc limit 100 offset 0
+Query2: select * from "inns" order by "inns"."id" asc limit 100 offset 100
+~~~~~
+Query978: select * from "inns" order by "inns"."id" asc limit 100 offset 97700
+Query979: select * from "inns" order by "inns"."id" asc limit 100 offset 97800
 ```
 
 ```
@@ -69,7 +75,12 @@ CHECK MEMORY USAGE
 ==================
 縄文の宿まんてんル華耀亭や亭ザ・サンプラザート
 ==================
-time: 1.841864 memory: 6.000000 MB
+time: 1.720385 memory: 6.000000 MB
+Query1: select * from "inns" order by "inns"."id" asc limit 1000 offset 0
+Query2: select * from "inns" order by "inns"."id" asc limit 1000 offset 1000
+~~~~
+Query97: select * from "inns" order by "inns"."id" asc limit 1000 offset 96000
+Query98: select * from "inns" order by "inns"."id" asc limit 1000 offset 97000
 ```
 
 ```
@@ -78,7 +89,8 @@ CHECK MEMORY USAGE
 ==================
 縄文の宿まんてんル華耀亭や亭ザ・サンプラザート
 ==================
-time: 1.543955 memory: 4.000000 MB
+time: 1.620625 memory: 4.000000 MB
+Query1: select * from "inns"
 ```
 
 ## 利用したデータ・セット
