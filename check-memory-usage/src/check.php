@@ -4,6 +4,7 @@ ini_set('memory_limit', '256M');
 
 $arr = [
     'all',
+    'chunk10',
     'chunk100',
     'chunk1000',
     'cursor',
@@ -37,5 +38,3 @@ $queryLog = $capsule->getConnection()->getQueryLog();
 foreach ($queryLog as $i => $query) {
     echo 'Query' . ($i + 1) . ': ' . $query['query'] . PHP_EOL;
 }
-
-

@@ -56,6 +56,20 @@ Query1: select * from "inns"
 ```
 
 ```
+$ php check.php chunk10
+CHECK MEMORY USAGE
+==================
+縄文の宿まんてんル華耀亭や亭ザ・サンプラザート
+==================
+time: 59.299147 memory: 10.000000 MB
+Query1: select * from "inns" order by "inns"."id" asc limit 10 offset 0
+Query2: select * from "inns" order by "inns"."id" asc limit 10 offset 10
+...
+Query9780: select * from "inns" order by "inns"."id" asc limit 10 offset 97790
+Query9781: select * from "inns" order by "inns"."id" asc limit 10 offset 97800
+```
+
+```
 $ php check.php chunk100
 CHECK MEMORY USAGE
 ==================
@@ -64,7 +78,7 @@ CHECK MEMORY USAGE
 time: 9.412318 memory: 4.000000 MB
 Query1: select * from "inns" order by "inns"."id" asc limit 100 offset 0
 Query2: select * from "inns" order by "inns"."id" asc limit 100 offset 100
-~~~~~
+...
 Query978: select * from "inns" order by "inns"."id" asc limit 100 offset 97700
 Query979: select * from "inns" order by "inns"."id" asc limit 100 offset 97800
 ```
@@ -78,7 +92,7 @@ CHECK MEMORY USAGE
 time: 1.720385 memory: 6.000000 MB
 Query1: select * from "inns" order by "inns"."id" asc limit 1000 offset 0
 Query2: select * from "inns" order by "inns"."id" asc limit 1000 offset 1000
-~~~~
+...
 Query97: select * from "inns" order by "inns"."id" asc limit 1000 offset 96000
 Query98: select * from "inns" order by "inns"."id" asc limit 1000 offset 97000
 ```
