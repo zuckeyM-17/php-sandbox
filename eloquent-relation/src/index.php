@@ -1,7 +1,11 @@
 <?php
 
+require_once __DIR__.'/config.php';
+
 try {
-    $db = new PDO('mysql:host=127.0.0.1;dbname=test;charset=utf8;', 'db_user', 'password');
+    $db = new PDO("mysql:host=".getenv("MYSQL_HOST").";dbname=".getenv("MYSQL_DATABASE").";charset=utf8;",
+        getenv("MYSQL_USER"),
+        getenv("MYSQL_PASSWORD"));
 
     $sql = "INSERT INTO users VALUES (null, ?,?,?,?);";
 
