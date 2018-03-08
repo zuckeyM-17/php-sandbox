@@ -1,4 +1,5 @@
 <?php
+namespace App;
 
 use \Illuminate\Database\Eloquent\Model;
 
@@ -12,4 +13,9 @@ use \Illuminate\Database\Eloquent\Model;
 class Episode extends Model
 {
     public $timestamps = false;
+
+    public function contents()
+    {
+        return $this->hasMany('App\Comment');
+    }
 }
