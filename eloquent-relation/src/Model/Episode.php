@@ -14,8 +14,13 @@ class Episode extends Model
 {
     public $timestamps = false;
 
-    public function contents()
+    public function episodeContents()
     {
-        return $this->hasMany('App\Comment');
+        return $this->hasMany('App\EpisodeContent');
+    }
+
+    public function casts()
+    {
+        return $this->belongsToMany('App\Cast', 'episode_casts');
     }
 }
